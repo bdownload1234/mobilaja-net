@@ -7,9 +7,9 @@ class Page_Mobilaja extends CI_Controller {
 	{
 		$this->db->order_by('id' ,'DESC');
 		$data['careers'] = $this->db->get('info_loker')->result();
-		$this->load->view('header');
+		$this->load->view('pagemobilaja/header');
 		$this->load->view('page/home',$data);
-		$this->load->view('footer');
+		$this->load->view('pagemobilaja/footer');
 	}
 
 	public function registrasi()

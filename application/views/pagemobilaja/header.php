@@ -14,17 +14,17 @@
 
 	<link href='http://fonts.googleapis.com/css?family=Roboto:400,300,500,700' rel='stylesheet' type='text/css'>
 
-	<link rel="stylesheet" href="<?= base_url() ?>/views/pagemobilaja/assets/css/bootstrap.css">
-	<link rel="stylesheet" href="<?= base_url() ?>/views/pagemobilaja/assets/css/font-awesome.min.css">
-	<link rel="stylesheet" href="<?= base_url() ?>/views/pagemobilaja/assets/css/main.css">
+	<link rel="stylesheet" href="<?= base_url() ?>/assets/pagemobilaja/css/bootstrap.css">
+	<link rel="stylesheet" href="<?= base_url() ?>/assets/pagemobilaja/css/font-awesome.min.css">
+	<link rel="stylesheet" href="<?= base_url() ?>/assets/pagemobilaja/css/main.css">
 	<!-- Slider Pro Css -->
-	<link rel="stylesheet" href="<?= base_url() ?>/views/pagemobilaja/assets/css/sliderPro.css">
+	<link rel="stylesheet" href="<?= base_url() ?>/assets/pagemobilaja/css/sliderPro.css">
 	<!-- Owl Carousel Css -->
-	<link rel="stylesheet" href="<?= base_url() ?>/views/pagemobilaja/assets/css/owl-carousel.css">
+	<link rel="stylesheet" href="<?= base_url() ?>/assets/pagemobilaja/css/owl-carousel.css">
 	<!-- Flat Icons Css -->
-	<link rel="stylesheet" href="<?= base_url() ?>/views/pagemobilaja/assets/css/flaticon.css">
+	<link rel="stylesheet" href="<?= base_url() ?>/assets/pagemobilaja/css/flaticon.css">
 	<!-- Animated Css -->
-	<link rel="stylesheet" href="<?= base_url() ?>/views/pagemobilaja/assets/css/animated.css">
+	<link rel="stylesheet" href="<?= base_url() ?>/assets/pagemobilaja/css/animated.css">
 
 
 	<!--[if lt IE 9]>
@@ -55,11 +55,11 @@
 		<div id="main-header" class="main-header">
 			<div class="container clearfix">
 				<div class="logo">
-					<a href="index.html"></a>
+					<a href="<?= base_url('page_mobilaja') ?>"></a>
 				</div>
 				<div id='cssmenu'>
 					<ul>
-					   	<li><a href='index.html'>Homepage</a></li>
+					   	<li><a href='<?= base_url('page_mobilaja') ?>'>Homepage</a></li>
 					   	<li class='active'><a href='#'>Car Listing</a>
 					      	<ul>
 					         	<li><a href='#'>Sidebar</a>
