@@ -8,7 +8,8 @@ class Page_Mobilaja extends CI_Controller {
 		$this->db->order_by('id' ,'DESC');
 		$data['careers'] = $this->db->get('info_loker')->result();
 		$this->load->view('pagemobilaja/header');
-		$this->load->view('page/home',$data);
+		$this->load->view('pagemobilaja/slider');
+		$this->load->view('pagemobilaja/home',$data);
 		$this->load->view('pagemobilaja/footer');
 	}
 
@@ -28,8 +29,8 @@ class Page_Mobilaja extends CI_Controller {
 
 	public function login()
 	{
-		$this->load->view('header');
-		$this->load->view('page/login');
-		$this->load->view('footer');
+		$this->load->view('pagemobilaja/header');
+		$this->load->view('pagemobilaja/login');
+		//$this->load->view('footer');
 	}
 }

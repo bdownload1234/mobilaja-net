@@ -82,12 +82,12 @@ class Admin extends CI_Controller {
 		is_admin();
 	    if($this->form_validation->run('career') == false) {
 			$this->load->view('header');
-	      $this->load->view('page/admin/create_career');
-		  $this->load->view('footer');
+	    	$this->load->view('page/admin/create_career');
+			$this->load->view('footer');
 	    } else {
 	      $data = [
 	        'info'  		=> $this->input->post('info'),
-	        'perusahaan'       	=> $this->input->post('perusahaan'),
+	        'perusahaan'    => $this->input->post('perusahaan'),
 	        'tanggal_akhir' => $this->input->post('tgl_akhir'),
 	        'tanggal'   	=> date('Y-m-d'),
 	      ];
