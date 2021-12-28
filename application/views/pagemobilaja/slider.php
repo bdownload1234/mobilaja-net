@@ -56,6 +56,7 @@
 				<div class="col-md-12">
 					<div class="slider-top-features">
 						<div id="owl-top-features" class="owl-carousel owl-theme">
+							
 							<div class="item car-item">
 								<div class="thumb-content d-flex align-items-center justify-content-center" style="height: 150px;">
 									<a href="single_car.html"><img src="https://www.honda-indonesia.com/uploads/images/models/variants/type_prestige__1636515822474.png" class="w-100" alt=""></a>
@@ -65,42 +66,7 @@
 									<span>Rp. 323.000.000</span>
 								</div>
 							</div>
-							<div class="item car-item">
-								<div class="thumb-content d-flex align-items-center justify-content-center" style="height: 150px;">
-									<a href="single_car.html"><img src="https://www.toyota.astra.co.id/sites/default/files/2021-11/1_veloz-black-metallic.png" class="w-100" alt=""></a>
-								</div>
-								<div class="down-content">
-									<a href="single_car.html"><h4>Honda Civic</h4></a>
-									<span>Rp. 256.000.000</span>
-								</div>
-							</div>
-							<div class="item car-item">
-								<div class="thumb-content d-flex align-items-center justify-content-center" style="height: 150px;">
-									<a href="single_car.html"><img src="https://www.toyota.astra.co.id/sites/default/files/2021-06/1.%20alphard%20colors%20white%20pearl.png" class="w-100" alt=""></a>
-								</div>
-								<div class="down-content">
-									<a href="single_car.html"><h4>Honda Brio</h4></a>
-									<span>Rp. 256.000.000</span>
-								</div>
-							</div>
-							<div class="item car-item">
-								<div class="thumb-content d-flex align-items-center justify-content-center" style="height: 150px;">
-									<a href="single_car.html"><img src="https://www.toyota.astra.co.id/sites/default/files/2021-11/01_attitude-black_0.png" class="w-100" alt=""></a>
-								</div>
-								<div class="down-content">
-									<a href="single_car.html"><h4>City Hatchback</h4></a>
-									<span>Rp. 256.000.000</span>
-								</div>
-							</div>
-							<div class="item car-item">
-								<div class="thumb-content d-flex align-items-center justify-content-center" style="height: 150px;">
-									<a href="single_car.html"><img src="https://www.toyota.astra.co.id/sites/default/files/2021-08/1-citrus-mica-metallic.png" class="w-100" alt=""></a>
-								</div>
-								<div class="down-content">
-									<a href="single_car.html"><h4>Honda City</h4></a>
-									<span>Rp. 256.000.000</span>
-								</div>
-							</div>
+							
 						</div>
 					</div>
 				</div>

@@ -4,20 +4,20 @@
                     <div class="login100-pic js-tilt" data-tilt>
                         <img src="<?= base_url() ?>/assets/pagemobilaja/login/images/img-01.png" alt="IMG" />
                     </div>
-
-                    <form class="login100-form validate-form">
+                    <?= $this->session->flashdata('message'); ?>
+                    <form class="login100-form" action="<?= base_url('admin/auth') ?>" method="post">
                         <span class="login100-form-title"> Member Login </span>
 
-                        <div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
-                            <input class="input100" type="text" name="email" placeholder="Email" />
+                        <div class="wrap-input100">
+                            <input class="input100" type="text" name="username" placeholder="Username" required>
                             <span class="focus-input100"></span>
                             <span class="symbol-input100">
                                 <i class="fa fa-envelope" aria-hidden="true"></i>
                             </span>
                         </div>
 
-                        <div class="wrap-input100 validate-input" data-validate="Password is required">
-                            <input class="input100" type="password" name="pass" placeholder="Password" />
+                        <div class="wrap-input100">
+                            <input class="input100" type="password" name="password" placeholder="Password" required>
                             <span class="focus-input100"></span>
                             <span class="symbol-input100">
                                 <i class="fa fa-lock" aria-hidden="true"></i>
@@ -25,7 +25,7 @@
                         </div>
 
                         <div class="container-login100-form-btn">
-                            <button class="login100-form-btn">Login</button>
+                            <button class="login100-form-btn" type="submit">Login</button>
                         </div>
 
                         <div class="text-center p-t-12">

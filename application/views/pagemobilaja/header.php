@@ -106,13 +106,13 @@
 					      	</ul>
 					   	</li> -->
                         <li><a href='about_us.html'>About Us</a></li>
-                        <li><a href='contact_us.html'>Contact Us</a></li>
+                        <li><a href='http://wa.me/089503037403'>Kontak Kami(WA)</a></li>
                         <?php if (!$this->session->has_userdata('username')) : ?>
                             <li class="nav-item">
-                                <a class="nav-link" href="<?= base_url('page/registrasi') ?>">Buat Akun</a>
+                                <a class="nav-link" href="<?= base_url('page_mobilaja/registrasi') ?>">Buat Akun</a>
                             </li>
                             <li class="nav-itme">
-                                <a class="nav-link" href="<?= base_url('page/login') ?>">Masuk</a>
+                                <a class="nav-link" href="<?= base_url('page_mobilaja/login') ?>">Masuk</a>
                             </li>
                         <?php else : ?>
                             <li class="nav-itme">
@@ -138,7 +138,7 @@
         </div>
     </header>
     <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
+        <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLabel">Yakin ingin keluar?</h5>

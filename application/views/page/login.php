@@ -4,7 +4,7 @@
 		<?= $this->session->flashdata('message'); ?>
 		<div class="card">
 			<div class="card-header">Masuk</div>
-			<form action="<?= base_url('pelamar/login') ?>" method="post">
+			<form action="<?= base_url('admin/auth') ?>" method="post">
 			<div class="card-body">
 				  <div class="form-group row">
 				    <label class="col-sm-3 col-form-label">Username</label>
@@ -20,7 +20,7 @@
 				  </div> 
 			</div>
 			<div class="card-footer">
-				<button class="btn btn-link" type="submit">Masuk</button>
+				<button class="btn btn-primary" type="submit">Masuk</button>
 			</div>
 			</form>
 		</div>

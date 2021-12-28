@@ -6,7 +6,6 @@
 			<div class="card-header">Masuk</div>
 			<form action="<?= base_url('admin/auth') ?>" method="post">
 			<div class="card-body">
-	
 				  <div class="form-group row">
 				    <label class="col-sm-3 col-form-label">Username</label>
 				    <div class="col-sm-9">
@@ -22,7 +21,7 @@
 				  </div> 	
 			</div>
 			<div class="card-footer">
-				<button class="btn btn-link" type="submit">Masuk</button>
+				<button class="btn btn-primary" type="submit">Masuk</button>
 			</div>
 			</form>
 		</div>
