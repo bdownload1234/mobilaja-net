@@ -141,10 +141,10 @@
 								<div class="car-item wow fadeIn" data-wow-duration="0.75s">
 									<div class="thumb-content">
 										<div class="car-banner">
-											<a href="single_car.html"><?= $i->kondisi_kendaraan ?></a>
+											<a><?= $i->kondisi_kendaraan ?></a>
 										</div>
 										<div class="thumb-inner p-5">
-											<a href="single_car.html"><img src="https://www.toyota.astra.co.id/sites/default/files/2020-07/4_super%20white-min.png" alt=""></a>
+											<button data-toggle="modal" data-target="#exampleModalCenter<?= $i->id ?>"><img src="https://www.toyota.astra.co.id/sites/default/files/2020-07/4_super%20white-min.png" alt=""></button>
 										</div>
 									</div>
 									<div class="down-content">
@@ -174,6 +174,25 @@
 												</div>
 											</li>
 										</ul>
+									</div>
+								</div>
+							</div>
+							<div class="modal fade" id="exampleModalCenter<?= $i->id ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+								<div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+									<div class="modal-content">
+										<div class="modal-header">
+											<h5 class="modal-title" id="exampleModalLongTitle"><?= $i->info ?></h5>
+											<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+												<span aria-hidden="true">&times;</span>
+											</button>
+										</div>
+										<div class="modal-body">
+										<?= $i->deskripsi ?>
+										</div>
+										<div class="modal-footer">
+											<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+											<button type="button" class="btn btn-primary" onclick="window.open('http://wa.me/62<?= ltrim($i->nomor_person, '0')?>')">Hubungi Whatsapp a/n <?= $i->nama?></button>
+										</div>
 									</div>
 								</div>
 							</div>
