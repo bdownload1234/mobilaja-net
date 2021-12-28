@@ -113,7 +113,7 @@
 				<div id='cssmenu'>
 					<ul>
 					   	<li><a href='<?= base_url('page_mobilaja') ?>'>Homepage</a></li>
-					   	<li class='active'><a href='#'>Car Listing</a>
+					   	<!-- <li class='active'><a href='#'>Car Listing</a>
 					      	<ul>
 					         	<li><a href='#'>Sidebar</a>
 					            	<ul>
@@ -129,10 +129,11 @@
 					         	</li>
 					         	<li><a href="single_car.html">Single Car</a></li>
 					      	</ul>
-					   	</li>
+					   	</li> -->
 					   <li><a href='about_us.html'>About Us</a></li>
 					   <li><a href='contact_us.html'>Contact Us</a></li>
 					   <li><a href='<?= base_url('page_mobilaja/login') ?>'><strong>Login</strong></a></li>
+                       <li><a href='<?= base_url('page_mobilaja/registrasi') ?>'><strong>Register</strong></a></li>
 					</ul>
 				</div>
 			</div>

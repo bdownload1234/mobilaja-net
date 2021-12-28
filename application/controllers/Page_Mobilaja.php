@@ -6,7 +6,7 @@ class Page_Mobilaja extends CI_Controller {
 	public function index()
 	{
 		$this->db->order_by('id' ,'DESC');
-		$data['careers'] = $this->db->get('info_loker')->result();
+		$data['iklan'] = $this->db->get('info_iklan')->result();
 		$this->load->view('pagemobilaja/header');
 		$this->load->view('pagemobilaja/slider');
 		$this->load->view('pagemobilaja/home',$data);
@@ -15,15 +15,15 @@ class Page_Mobilaja extends CI_Controller {
 
 	public function registrasi()
 	{
-		$this->load->view('header');
-		$this->load->view('page/registrasi');
-		$this->load->view('footer');
+		$this->load->view('pagemobilaja/header');
+		$this->load->view('pagemobilaja/register');
+		//$this->load->view('footer');
 	}
 
 	public function registrasiadmin()
 	{
 		$this->load->view('header');
-		$this->load->view('admin/registrasiadmin');
+		$this->load->view('page/admin/registrasiadmin');
 		$this->load->view('footer');
 	}
 
