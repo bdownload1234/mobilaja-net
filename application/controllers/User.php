@@ -37,13 +37,13 @@ class User extends CI_Controller
 		$this->session->unset_userdata('username');
 		$this->session->unset_userdata('role');
 		alertsuccess('message', 'Logout berhasil');
-		redirect('page/login');
+		redirect('page_mobilaja/index');
 	}
 
 	public function registrasi()
 	{
 		$data = [
-			'username'			=> $this->input->post('username', true),
+			'email'				=> $this->input->post('email', true),
 			'password'			=> password_hash($this->input->post('password'), PASSWORD_DEFAULT),
 			'nama_lengkap'		=> $this->input->post('nama', true),
 			'tgl_lahir'			=> $this->input->post('tgl_lahir', true),

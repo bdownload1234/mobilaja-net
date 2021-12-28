@@ -62,25 +62,6 @@
 	</footer>
 	
 
-	<script src="<?= base_url() ?>/assets/pagemobilaja/js/jquery-1.11.0.min.js"></script>
-
-	<!-- Slider Pro Js -->
-	<script src="<?= base_url() ?>/assets/pagemobilaja/js/sliderpro.min.js"></script>
-
-	<!-- Slick Slider Js -->
-	<script src="<?= base_url() ?>/assets/pagemobilaja/js/slick.js"></script>
-
-	<!-- Owl Carousel Js -->
-    <script src="<?= base_url() ?>/assets/pagemobilaja/js/owl.carousel.min.js"></script>
-
-	<!-- Boostrap Js -->
-    <script src="<?= base_url() ?>/assets/pagemobilaja/js/bootstrap.min.js"></script>
-
-    <!-- Boostrap Js -->
-    <script src="<?= base_url() ?>/assets/pagemobilaja/js/wow.animation.js"></script>
-
-	<!-- Custom Js -->
-    <script src="<?= base_url() ?>/assets/pagemobilaja/js/custom.js"></script>
 
 </body>
 </html>

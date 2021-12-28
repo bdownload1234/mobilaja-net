@@ -40,44 +40,48 @@ class Admin extends CI_Controller {
 				];
 				$this->session->set_userdata($data);
 
-				redirect('page');
+				redirect('page_mobilaja');
 			} else {
 				alerterror('message','Password salah');
-				redirect('admin/login');
+				redirect('page_mobilaja/login');
 			}
 		} 
 		else {
 			alerterror('message','Username tidak ditemukan');
-			redirect('admin/login');
+			redirect('page_mobilaja/login');
 		}
 	}
 
 	public function registrasi()
 	{
 		$data = [
-			'username'			=> $this->input->post('username',true),
-			'password'			=> password_hash($this->input->post('password'),PASSWORD_DEFAULT),
-			'status'			=> $this->input->post('status',true),
+			'email'				=> $this->input->post('email', true),
+			'password'			=> password_hash($this->input->post('password'), PASSWORD_DEFAULT),
+			'nama_lengkap'		=> $this->input->post('nama', true),
+			'tgl_lahir'			=> $this->input->post('tgl_lahir', true),
+			'domisili'			=> $this->input->post('domisili', true),
+			'no_hp'				=> $this->input->post('no_hp', true),
+			'status'			=> $this->input->post('status', true),
+			'tanggal'			=> date('Y-m-d'),
 		];
 
-		$this->db->insert('admin_login',$data);
+		$this->db->insert('registrasi', $data);
 
-		alertsuccess('message','Akun anda berhasil dibuat');
-		redirect('admin/login');
-
+		alertsuccess('message', 'Akun anda berhasil dibuat');
+		redirect('page/login');
 	}
 
-	public function career()
+	public function iklan()
 	{
 		is_admin();
 		$this->db->order_by('id','DESC');
-		$data['careers'] = $this->db->get('info_loker')->result();
+		$data['iklan'] = $this->db->get('info_iklan')->result();
 		$this->load->view('header');
 		$this->load->view('page/admin/career',$data);
 		$this->load->view('footer');
 	}
 
-	public function career_add()
+	public function iklan_add()
 	{
 		is_admin();
 	    if($this->form_validation->run('career') == false) {
@@ -96,7 +100,7 @@ class Admin extends CI_Controller {
 	      redirect('admin/career');
 	    }
 	}
-	public function career_edit($id)
+	public function iklan_edit($id)
 	{
 		is_admin();
 	    if($this->form_validation->run('career') == false) {
@@ -119,7 +123,7 @@ class Admin extends CI_Controller {
 	    }
 	}
 
-	public function career_del($id)
+	public function iklan_del($id)
 	{
 		is_admin();
 		$this->db->delete('info_loker',['id' => $id]);

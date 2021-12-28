@@ -29,7 +29,7 @@ class Page_Mobilaja extends CI_Controller {
 
 	public function login()
 	{
-		$this->load->view('pagemobilaja/header');
+		$this->load->view('pagemobilaja/headerlogin');
 		$this->load->view('pagemobilaja/login');
 		//$this->load->view('footer');
 	}

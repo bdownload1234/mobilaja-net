@@ -44,9 +44,6 @@
             </div>
         </div>
 
-        <!--===============================================================================================-->
-        <script src="<?= base_url() ?>/assets/pagemobilaja/login/vendor/jquery/jquery-3.2.1.min.js"></script>
-        <!--===============================================================================================-->
         <script src="<?= base_url() ?>/assets/pagemobilaja/login/vendor/bootstrap/js/popper.js"></script>
         <script src="<?= base_url() ?>/assets/pagemobilaja/login/vendor/bootstrap/js/bootstrap.min.js"></script>
         <!--===============================================================================================-->
@@ -60,8 +57,6 @@
         </script>
         <!--===============================================================================================-->
         <script src="<?= base_url() ?>/assets/pagemobilaja/login/js/main.js"></script>
-
-        <script src="<?= base_url() ?>/assets/pagemobilaja/js/jquery-1.11.0.min.js"></script>
 
         <!-- Slider Pro Js -->
         <script src="<?= base_url() ?>/assets/pagemobilaja/js/sliderpro.min.js"></script>

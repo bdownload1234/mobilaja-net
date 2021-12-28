@@ -8,15 +8,31 @@
                     <form class="login100-form validate-form">
                         <span class="login100-form-title"> Member Sign Up </span>
 
-                        <div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
-                            <input class="input100" type="text" name="name" placeholder="Name" />
+                        <div class="wrap-input100 validate-input" data-validate="Masukan Nama Lengkap">
+                            <input class="input100" type="text" name="name" placeholder="Nama" />
                             <span class="focus-input100"></span>
                             <span class="symbol-input100">
                                 <i class="fa fa-envelope" aria-hidden="true"></i>
                             </span>
                         </div>
 
-                        <div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
+                        <div class="wrap-input100 validate-input" data-validate="Masukan Domisili Anda">
+                            <input class="input100" type="text" name="domisili" placeholder="Domisili" />
+                            <span class="focus-input100"></span>
+                            <span class="symbol-input100">
+                                <i class="fa fa-envelope" aria-hidden="true"></i>
+                            </span>
+                        </div>
+
+                        <div class="wrap-input100 validate-input" data-validate="Masukan Tanggal Lahir Anda">
+                            <input class="input100" type="date" name="tgl_lahir" placeholder="Masukan Tanggal Lahir" />
+                            <span class="focus-input100"></span>
+                            <span class="symbol-input100">
+                                <i class="fa fa-envelope" aria-hidden="true"></i>
+                            </span>
+                        </div>
+
+                        <div class="wrap-input100 validate-input" data-validate="Contoh email yang valid: ex@abc.xyz">
                             <input class="input100" type="text" name="email" placeholder="Email" />
                             <span class="focus-input100"></span>
                             <span class="symbol-input100">
@@ -25,22 +41,12 @@
                         </div>
 
                         <div class="wrap-input100 validate-input" data-validate="Password is required">
-                            <input class="input100" type="password" placeholder="Password" />
+                            <input class="input100" type="password" name="password" placeholder="Password" />
                             <span class="focus-input100"></span>
                             <span class="symbol-input100">
                                 <i class="fa fa-lock" aria-hidden="true"></i>
                             </span>
                         </div>
-
-                        <div class="wrap-input100 validate-input" data-validate="Confirmed Password is required">
-                            <input class="input100" type="password" name="pass" placeholder="Confirm Password" />
-                            <span class="focus-input100"></span>
-                            <span class="symbol-input100">
-                                <i class="fa fa-lock" aria-hidden="true"></i>
-                            </span>
-                        </div>
-
-
 
                         <div class="container-login100-form-btn">
                             <button class="login100-form-btn">Sign Up</button>
@@ -63,23 +69,14 @@
         </div>
 
         <!--===============================================================================================-->
-        <script src="<?= base_url() ?>/assets/pagemobilaja/login/vendor/jquery/jquery-3.2.1.min.js"></script>
         <!--===============================================================================================-->
         <script src="<?= base_url() ?>/assets/pagemobilaja/login/vendor/bootstrap/js/popper.js"></script>
         <script src="<?= base_url() ?>/assets/pagemobilaja/login/vendor/bootstrap/js/bootstrap.min.js"></script>
         <!--===============================================================================================-->
         <script src="<?= base_url() ?>/assets/pagemobilaja/login/vendor/select2/select2.min.js"></script>
         <!--===============================================================================================-->
-        <script src="<?= base_url() ?>/assets/pagemobilaja/login/vendor/tilt/tilt.jquery.min.js"></script>
-        <script>
-            $(".js-tilt").tilt({
-                scale: 1.1,
-            });
-        </script>
         <!--===============================================================================================-->
         <script src="<?= base_url() ?>/assets/pagemobilaja/login/js/main.js"></script>
-
-        <script src="<?= base_url() ?>/assets/pagemobilaja/js/jquery-1.11.0.min.js"></script>
 
         <!-- Slider Pro Js -->
         <script src="<?= base_url() ?>/assets/pagemobilaja/js/sliderpro.min.js"></script>

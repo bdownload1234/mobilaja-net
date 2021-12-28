@@ -62,7 +62,6 @@
 </head>
 
 <body>
-    <script src="<?= base_url() ?>/assets/pagemobilaja/js/jquery-1.11.0.min.js"></script>
 
     <!-- Slider Pro Js -->
     <script src="<?= base_url() ?>/assets/pagemobilaja/js/sliderpro.min.js"></script>
@@ -81,6 +80,8 @@
 
     <!-- Custom Js -->
     <script src="<?= base_url() ?>/assets/pagemobilaja/js/custom.js"></script>
+
+
     
 
     <div id="search">
@@ -133,7 +134,7 @@
                         <?php endif; ?>
 
                         <?php if ($this->session->has_userdata('username')) : ?>
-                            <?php if ($this->session->has_userdata('role')) : ?>
+                            <?php if (!$this->session->has_userdata('role')) : ?>
                                 <li class="nav-item">
                                     <a class="nav-link" href="<?= base_url('pelamar/profil') ?>"> Lihat Profil </a>
                                 </li>
@@ -159,7 +160,7 @@
                     </button>
                 </div>
                 <div class="modal-footer">
-                    <a class="btn btn-dark" href="<?= base_url('user/logout') ?>">Logout</a>
+                    <a class="btn btn-dark" href="<?= base_url('pelamar/logout') ?>">Logout</a>
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
                 </div>
             </div>
