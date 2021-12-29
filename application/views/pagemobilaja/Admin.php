@@ -8,8 +8,8 @@ class Admin extends CI_Controller {
 		parent::__construct();
 
 		$this->load->library('form_validation');
-	}
 
+	}
 	public function login()
 	{
 		$this->load->view('header');
@@ -47,7 +47,7 @@ class Admin extends CI_Controller {
 			}
 		} 
 		else {
-			alerterror('message','Email tidak ditemukan');
+			alerterror('message','email tidak ditemukan');
 			redirect('page_mobilaja/login');
 		}
 	}
@@ -75,19 +75,20 @@ class Admin extends CI_Controller {
 	public function iklan()
 	{
 		is_admin();
-		$this->db->order_by('tanggal','DESC');
+		$this->db->order_by('id','DESC');
 		$data['iklan'] = $this->db->get('info_iklan')->result();
-		$this->load->view('pagemobilaja/headerlogin');
-		$this->load->view('pagemobilaja/iklan',$data);
+		$this->load->view('header');
+		$this->load->view('page/admin/career',$data);
+		$this->load->view('footer');
 	}
 
 	public function iklan_add()
 	{
 		is_admin();
-	    if($this->form_validation->run('iklan') == false) {
-			$this->load->view('pagemobilaja/headerlogin');
-	    	$this->load->view('pagemobilaja/create_iklan');
-			
+	    if($this->form_validation->run('career') == false) {
+			$this->load->view('header');
+	    	$this->load->view('page/admin/create_career');
+			$this->load->view('footer');
 	    } else {
 	      $data = [
 	        'info'  		=> $this->input->post('info'),
@@ -100,7 +101,6 @@ class Admin extends CI_Controller {
 	      redirect('admin/career');
 	    }
 	}
-
 	public function iklan_edit($id)
 	{
 		is_admin();

@@ -56,17 +56,17 @@
 				<div class="col-md-12">
 					<div class="slider-top-features">
 						<div id="owl-top-features" class="owl-carousel owl-theme">
-						
+						<?php foreach ($iklan as $i) : ?>
 							<div class="item car-item">
-								<div class="thumb-content d-flex align-items-center justify-content-center" style="height: 150px;">
-									<a href="single_car.html"><img src="https://www.honda-indonesia.com/uploads/images/models/variants/type_prestige__1636515822474.png" class="w-100" alt=""></a>
+								<div class="thumb-content d-flex align-items-center justify-content-center" >
+									<a href="single_car.html"><img src="https://gambarmobil.com/foto/land-rover/261387-2012-range-rover-evoque-2-0-dynamic-luxury-si4-suv-tdp-253jt-jakg8459.jpg" class="w-100" alt=""></a>
 								</div>
 								<div class="down-content">
-									<a href="single_car.html"><h4>Honda BR-V</h4></a>
-									<span>Rp. 323.000.000</span>
+									<a href="single_car.html"><h4><?= $i->info ?></h4></a>
+									<span>Rp. <?= number_format("$i->harga", 2, ",", ".");  ?></span>
 								</div>
 							</div>
-							
+						<?php endforeach; ?>
 						</div>
 					</div>
 				</div>

@@ -151,7 +151,7 @@
 										<a href="single_car.html">
 											<h4><?= $i->info ?></h4>
 										</a>
-										<span>Rp.<?= $i->harga ?></span>
+										<span>Rp. <?= number_format("$i->harga", 2, ",", "."); ?></span>
 										<ul class="car-info">
 											<li>
 												<div class="item"><i class="flaticon flaticon-calendar"></i>

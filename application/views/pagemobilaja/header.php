@@ -140,7 +140,7 @@
                             <?php endif; ?>
                             <li class="nav-item">
                                 <?php if ($this->session->has_userdata('role')) : ?>
-                                    <a class="nav-link" href="<?= base_url('admin/career') ?>">Posting Iklan</a>
+                                    <a class="nav-link" href="<?= base_url('admin/iklan') ?>">Posting Iklan</a>
                                 <?php endif; ?>
                             </li>
                         <?php endif; ?>

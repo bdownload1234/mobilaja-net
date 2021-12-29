@@ -5,10 +5,10 @@ class Page_Mobilaja extends CI_Controller {
 
 	public function index()
 	{
-		$this->db->order_by('id' ,'DESC');
+		$this->db->order_by('tanggal','DESC');
 		$data['iklan'] = $this->db->get('info_iklan')->result();
 		$this->load->view('pagemobilaja/header');
-		$this->load->view('pagemobilaja/slider');
+		$this->load->view('pagemobilaja/slider',$data);
 		$this->load->view('pagemobilaja/home',$data);
 		$this->load->view('pagemobilaja/footer');
 	}

@@ -4,25 +4,25 @@
 		<div class="card">
 			<div class="card-header">Lowongan pekerjaan</div>
 			<div class="card-body">
-				<a href="<?= base_url('admin/career_add') ?>" class="btn btn-link mb-3">Tambah Lowongan</a>
+				<a href="<?= base_url('admin/iklan_add') ?>" class="btn btn-link mb-3">Tambah Lowongan</a>
 				<table class="table">	
 					<thead>
 						<tr>
 							<th>#</th>
 							<th>Info</th>
-							<th>Nama Perusahaan</th>
+							<th>Harga</th>
 							<th>Pilihan</th>
 						</tr>
 					</thead>
 					<tbody>
-					<?php $no=1; foreach($careers as $c):?>
+					<?php $no=1; foreach($iklan as $i):?>
 						<tr>
 							<td><?= $no ?></td>
-							<td><?= $c->info ?></td>
-							<td><?= $c->perusahaan ?></td>
+							<td><?= $i->info ?></td>
+							<td><?= $i->harga ?></td>
 							<td>
-								<a href="<?= base_url('admin/career_edit/'.$c->id) ?>" class="btn btn-link">Edit</a>
-								<a href="<?= base_url('admin/career_del/'.$c->id) ?>" class="btn btn-link" onclick="return confirm('Data ini akan dihapus? ')">Hapus</a>
+								<a href="<?= base_url('admin/career_edit/'.$i->id) ?>" class="btn btn-link">Edit</a>
+								<a href="<?= base_url('admin/career_del/'.$i->id) ?>" class="btn btn-link" onclick="return confirm('Data ini akan dihapus? ')">Hapus</a>
 							</td>
 						</tr>
 					<?php $no++; endforeach; ?>
