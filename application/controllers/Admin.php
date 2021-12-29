@@ -26,17 +26,17 @@ class Admin extends CI_Controller {
 
 	public function auth()
 	{
-		$username = $this->input->post('username');
+		$email = $this->input->post('email');
 		$password = $this->input->post('password');
 
-		$user = $this->db->get_where('admin_login',['username' => $username])->row();
+		$user = $this->db->get_where('registrasi',['email' => $email])->row();
 
 		if($user) {
 			if(password_verify($password, $user->password)) {
 				
 				$data = [
-					'username' 	=> $user->username,
-					'role'	=> 'admin'
+					'email' 	=> $user->email,
+					'role'		=> 'admin'
 				];
 				$this->session->set_userdata($data);
 
@@ -47,7 +47,7 @@ class Admin extends CI_Controller {
 			}
 		} 
 		else {
-			alerterror('message','Username tidak ditemukan');
+			alerterror('message','email tidak ditemukan');
 			redirect('page_mobilaja/login');
 		}
 	}
@@ -60,6 +60,7 @@ class Admin extends CI_Controller {
 			'nama_lengkap'		=> $this->input->post('nama', true),
 			'tgl_lahir'			=> $this->input->post('tgl_lahir', true),
 			'domisili'			=> $this->input->post('domisili', true),
+			'provinsi'			=> $this->input->post('provinsi', true),
 			'no_hp'				=> $this->input->post('no_hp', true),
 			'status'			=> $this->input->post('status', true),
 			'tanggal'			=> date('Y-m-d'),
@@ -130,5 +131,12 @@ class Admin extends CI_Controller {
 
 		alertsuccess('message','Data berhasil dihapus');
 		redirect('admin/career');
+	}
+
+	public function profil()
+	{
+		$data['profile'] = $this->db->get_where('registrasi', ['email' => $this->session->userdata('email')])->row();
+		$this->load->view('pagemobilaja/headerlogin');
+		$this->load->view('pagemobilaja/profile', $data);
 	}
 }

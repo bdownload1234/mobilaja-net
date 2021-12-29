@@ -119,7 +119,7 @@
 					   	</li> -->
                         <li><a href='about_us.html'>About Us</a></li>
                         <li><a href='http://wa.me/089503037403'>Kontak Kami(WA)</a></li>
-                        <?php if (!$this->session->has_userdata('username')) : ?>
+                        <?php if (!$this->session->has_userdata('email')) : ?>
                             <li class="nav-item">
                                 <a class="nav-link" href="<?= base_url('page_mobilaja/registrasi') ?>">Buat Akun</a>
                             </li>
@@ -132,10 +132,10 @@
                             </li>
                         <?php endif; ?>
 
-                        <?php if ($this->session->has_userdata('username')) : ?>
+                        <?php if ($this->session->has_userdata('email')) : ?>
                             <?php if ($this->session->has_userdata('role')) : ?>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="<?= base_url('pelamar/profil') ?>"> Lihat Profil </a>
+                                    <a class="nav-link" href="<?= base_url('admin/profil') ?>"> Lihat Profil </a>
                                 </li>
                             <?php endif; ?>
                             <li class="nav-item">

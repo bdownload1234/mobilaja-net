@@ -9,7 +9,7 @@
                         <span class="login100-form-title"> Member Login </span>
 
                         <div class="wrap-input100">
-                            <input class="input100" type="text" name="username" placeholder="Username" required>
+                            <input class="input100" type="email" name="email" placeholder="Email" required>
                             <span class="focus-input100"></span>
                             <span class="symbol-input100">
                                 <i class="fa fa-envelope" aria-hidden="true"></i>

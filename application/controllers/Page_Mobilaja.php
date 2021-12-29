@@ -15,7 +15,7 @@ class Page_Mobilaja extends CI_Controller {
 
 	public function registrasi()
 	{
-		$this->load->view('pagemobilaja/header');
+		$this->load->view('pagemobilaja/headerlogin');
 		$this->load->view('pagemobilaja/register');
 		//$this->load->view('footer');
 	}
@@ -25,6 +25,13 @@ class Page_Mobilaja extends CI_Controller {
 		$this->load->view('header');
 		$this->load->view('page/admin/registrasiadmin');
 		$this->load->view('footer');
+	}
+
+	public function profil()
+	{
+		$this->load->view('pagemobilaja/header');
+		$this->load->view('pagemobilaja/profile');
+		$this->load->view('pagemobilaja/footer');
 	}
 
 	public function login()

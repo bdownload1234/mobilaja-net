@@ -136,7 +136,7 @@
                         <?php if ($this->session->has_userdata('username')) : ?>
                             <?php if (!$this->session->has_userdata('role')) : ?>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="<?= base_url('pelamar/profil') ?>"> Lihat Profil </a>
+                                    <a class="nav-link" href="<?= base_url('admin/profil') ?>"> Lihat Profil </a>
                                 </li>
                             <?php endif; ?>
                             <li class="nav-item">

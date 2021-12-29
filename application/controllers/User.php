@@ -34,7 +34,7 @@ class User extends CI_Controller
 
 	public function logout()
 	{
-		$this->session->unset_userdata('username');
+		$this->session->unset_userdata('email');
 		$this->session->unset_userdata('role');
 		alertsuccess('message', 'Logout berhasil');
 		redirect('page_mobilaja/index');
