@@ -139,12 +139,12 @@
 						<?php foreach ($iklan as $i) : ?>
 							<div class="col-md-4 col-sm-6">
 								<div class="car-item wow fadeIn" data-wow-duration="0.75s">
-									<div class="thumb-content">
+									<div class="thumb-content d-flex align-items-center justify-content-center" >
 										<div class="car-banner">
 											<a><?= $i->kondisi_kendaraan ?></a>
 										</div>
 										<div class="thumb-inner">
-											<button data-toggle="modal" data-target="#exampleModalCenter<?= $i->id ?>"><img src="https://gambarmobil.com/foto/land-rover/261387-2012-range-rover-evoque-2-0-dynamic-luxury-si4-suv-tdp-253jt-jakg8459.jpg" alt=""></button>
+											<button data-toggle="modal" data-target="#exampleModalCenter<?= $i->id ?>"><img src="<?= base_url() ?>/assets/img/mobil/<?= $i->email?>/<?= $i->foto_kendaraan?> " style='height: 300px; width: 100%; object-fit: contain' alt=""></button>
 										</div>
 									</div>
 									<div class="down-content">

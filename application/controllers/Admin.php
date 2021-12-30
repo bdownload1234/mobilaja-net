@@ -1,6 +1,8 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
+$n = 1;
+
 class Admin extends CI_Controller
 {
 
@@ -78,7 +80,7 @@ class Admin extends CI_Controller
 	{
 		is_admin();
 		$this->db->order_by('tanggal', 'DESC');
-		$data['iklan'] = $this->db->get_where('info_iklan', array('nama'=>$this->session->userdata('nama')))->result();
+		$data['iklan'] = $this->db->get_where('info_iklan', array('email'=>$this->session->userdata('email')))->result();
 		$this->load->view('pagemobilaja/headerlogin');
 		$this->load->view('pagemobilaja/iklan', $data);
 	}
@@ -86,6 +88,13 @@ class Admin extends CI_Controller
 	public function iklan_add()
 	{
 		is_admin();
+
+		if (!empty($_FILES['foto_kendaraan']['name'])) {
+			$foto_kendaraan = $this->_uploadImage('foto_kendaraan');
+		} else {
+			$foto_kendaraan = 'default.png';
+		}
+
 		if ($this->form_validation->run('iklan') == false) {
 			$this->load->view('pagemobilaja/headerlogin');
 			$this->load->view('pagemobilaja/create_iklan');
@@ -100,8 +109,10 @@ class Admin extends CI_Controller
 				'harga'  					=> $this->input->post('harga'),
 				'deskripsi'   				=> $this->input->post('deskripsi'),
 				'nama'   					=> $this->input->post('nama'),
+				'email'   					=> $this->input->post('email'),
 				'nomor_person'   			=> $this->input->post('nomor_person'),
 				'tanggal'					=> date('Y-m-d'),
+				'foto_kendaraan'			=> $foto_kendaraan,
 			];
 			$this->db->insert('info_iklan', $data);
 			alertsuccess('message', 'Data berhasil ditambahkan');
@@ -145,5 +156,51 @@ class Admin extends CI_Controller
 		$data['profile'] = $this->db->get_where('registrasi', ['email' => $this->session->userdata('email')])->row();
 		$this->load->view('pagemobilaja/headerlogin');
 		$this->load->view('pagemobilaja/profile', $data);
+	}
+
+
+	public function uploadcv()
+	{
+		if (!empty($_FILES['cv']['name'])) {
+			$cv = $this->_uploadImage('cv');
+		} else {
+			$cv = 'default.png';
+		}
+
+		$data = [
+			'id_loker'		=> $this->input->post('id_loker', true),
+			'username'		=> $this->session->userdata('username'),
+			'name'			=> $this->input->post('name', true),
+			'cv'			=> $cv,
+		];
+
+		$this->db->insert('curiculum_vitae', $data);
+		alertsuccess('message', 'Data terkirim, mudah bukan?');
+		redirect('page');
+	}
+
+	
+	public function _uploadImage($name)
+	{
+		mkdir('./assets/img/mobil/'. $this->session->userdata('email'), 0777, TRUE);
+		$config['upload_path']          = './assets/img/mobil/'. $this->session->userdata('email');
+		$config['allowed_types']        = 'jpg|png';
+		$config['file_name']            = time().uniqid();
+		$config['overwrite']			= true;
+		$config['max_size']             = 1024;
+		$GLOBALS['n']++;
+
+		$this->load->library('upload', $config);
+
+		if ($this->upload->do_upload($name)) {
+			$filename =  $this->upload->data("file_name");
+		} else {
+			$filename = 'default.png';
+		}
+		$data = [
+			'image' => $filename,
+		];
+
+		return $filename;
 	}
 }

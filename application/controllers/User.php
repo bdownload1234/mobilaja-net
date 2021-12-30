@@ -119,12 +119,12 @@ class User extends CI_Controller
 
 	private function _uploadImage($name)
 	{
-		mkdir('./assets/img/mobil/' + $this->session->userdata('username'));
+		mkdir('./assets/img/mobil/' + $this->session->userdata('email'));
 
-		$config['upload_path']          = './assets/img/mobil/' + $this->session->userdata('username');
+		$config['upload_path']          = './assets/img/mobil/' + $this->session->userdata('email');
 		$config['allowed_types']        = 'jpg|png';
 		$config['file_name']            = time() . uniqid();
-		$config['overwrite']			 = true;
+		$config['overwrite']			= true;
 		$config['max_size']             = 1024;
 
 		$this->load->library('upload', $config);

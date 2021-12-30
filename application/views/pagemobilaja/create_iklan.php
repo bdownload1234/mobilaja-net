@@ -73,13 +73,14 @@
 					<div class="form-group row">
 						<label class="col-sm-3 col-form-label">Foto Mobil</label>
 						<div class="col-sm-9">
-							<input type="file" class="form-control" name="cv" lang="es" multiple>
-							<?= form_error('cv', '<small class="form-text text-danger">', '</small>') ?>
+							<input type="file" class="form-control" name="foto_kendaraan" lang="es" multiple>
+							<?= form_error('foto_kendaraan', '<small class="form-text text-danger">', '</small>') ?>
 						</div>
 					</div>
 
-					<input class="input100" type="hidden" name="nama" value=<?=$this->session->userdata('nama') ?>/>
-					<input class="input100" type="hidden" name="nomor_person" value=<?=$this->session->userdata('no_hp') ?>/>
+					<input class="input100" type="hidden" name="nama" value=<?= $this->session->userdata('nama') ?>>
+					<input class="input100" type="hidden" name="email" value=<?= $this->session->userdata('email') ?>>
+					<input class="input100" type="hidden" name="nomor_person" value=<?=$this->session->userdata('no_hp') ?>>
 
 				</div>
 				<div class="card-footer">

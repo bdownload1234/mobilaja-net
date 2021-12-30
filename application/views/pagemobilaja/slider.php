@@ -59,7 +59,7 @@
 						<?php foreach ($iklan as $i) : ?>
 							<div class="item car-item">
 								<div class="thumb-content d-flex align-items-center justify-content-center" >
-									<a href="single_car.html"><img src="https://gambarmobil.com/foto/land-rover/261387-2012-range-rover-evoque-2-0-dynamic-luxury-si4-suv-tdp-253jt-jakg8459.jpg" class="w-100" alt=""></a>
+								<button data-toggle="modal" data-target="#exampleModalCenter<?= $i->id ?>"><img src="<?= base_url() ?>/assets/img/mobil/<?= $i->email?>/<?= $i->foto_kendaraan?> " style='height: 120px; width: 100%; object-fit: contain' alt=""></button>
 								</div>
 								<div class="down-content">
 									<a href="single_car.html"><h4><?= $i->info ?></h4></a>
