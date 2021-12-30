@@ -1,7 +1,8 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
-class Admin extends CI_Controller {
+class Admin extends CI_Controller
+{
 
 	public function __construct()
 	{
@@ -29,25 +30,26 @@ class Admin extends CI_Controller {
 		$email = $this->input->post('email');
 		$password = $this->input->post('password');
 
-		$user = $this->db->get_where('registrasi',['email' => $email])->row();
+		$user = $this->db->get_where('registrasi', ['email' => $email])->row();
 
-		if($user) {
-			if(password_verify($password, $user->password)) {
-				
+		if ($user) {
+			if (password_verify($password, $user->password)) {
+
 				$data = [
 					'email' 	=> $user->email,
-					'role'		=> 'admin'
+					'role'		=> 'admin',
+					'nama'		=> $user->nama_lengkap,
+					'no_hp'		=> $user->no_hp
 				];
 				$this->session->set_userdata($data);
 
 				redirect('page_mobilaja');
 			} else {
-				alerterror('message','Password salah');
+				alerterror('message', 'Password salah');
 				redirect('page_mobilaja/login');
 			}
-		} 
-		else {
-			alerterror('message','Email tidak ditemukan');
+		} else {
+			alerterror('message', 'Email tidak ditemukan');
 			redirect('page_mobilaja/login');
 		}
 	}
@@ -75,61 +77,66 @@ class Admin extends CI_Controller {
 	public function iklan()
 	{
 		is_admin();
-		$this->db->order_by('tanggal','DESC');
-		$data['iklan'] = $this->db->get('info_iklan')->result();
+		$this->db->order_by('tanggal', 'DESC');
+		$data['iklan'] = $this->db->get_where('info_iklan', array('nama'=>$this->session->userdata('nama')))->result();
 		$this->load->view('pagemobilaja/headerlogin');
-		$this->load->view('pagemobilaja/iklan',$data);
+		$this->load->view('pagemobilaja/iklan', $data);
 	}
 
 	public function iklan_add()
 	{
 		is_admin();
-	    if($this->form_validation->run('iklan') == false) {
+		if ($this->form_validation->run('iklan') == false) {
 			$this->load->view('pagemobilaja/headerlogin');
-	    	$this->load->view('pagemobilaja/create_iklan');
-			
-	    } else {
-	      $data = [
-	        'info'  		=> $this->input->post('info'),
-	        'perusahaan'    => $this->input->post('perusahaan'),
-	        'tanggal_akhir' => $this->input->post('tgl_akhir'),
-	        'tanggal'   	=> date('Y-m-d'),
-	      ];
-	      $this->db->insert('info_loker',$data);
-	      alertsuccess('message','Data berhasil ditambahkan');
-	      redirect('admin/career');
-	    }
+			$this->load->view('pagemobilaja/create_iklan');
+		} else {
+			$data = [
+				'info'  					=> $this->input->post('info'),
+				'kondisi_kendaraan'  		=> $this->input->post('kondisi_kendaraan'),
+				'tahun_kendaraan'  			=> $this->input->post('tahun_kendaraan'),
+				'kilometer_kendaraan'  		=> $this->input->post('kilometer_kendaraan'),
+				'jenis_bahanbakar'  		=> $this->input->post('jenis_bahanbakar'),
+				'warna'  					=> $this->input->post('warna'),
+				'harga'  					=> $this->input->post('harga'),
+				'deskripsi'   				=> $this->input->post('deskripsi'),
+				'nama'   					=> $this->input->post('nama'),
+				'nomor_person'   			=> $this->input->post('nomor_person'),
+				'tanggal'					=> date('Y-m-d'),
+			];
+			$this->db->insert('info_iklan', $data);
+			alertsuccess('message', 'Data berhasil ditambahkan');
+			redirect('admin/iklan');
+		}
 	}
 
 	public function iklan_edit($id)
 	{
 		is_admin();
-	    if($this->form_validation->run('career') == false) {
+		if ($this->form_validation->run('career') == false) {
 
-	      $data['career'] = $this->db->get_where('info_loker',['id' => $id])->row();
-		  $this->load->view('header');
-	      $this->load->view('page/admin/edit_career',$data);
-		  $this->load->view('footer');
-	    
-	    } else {
-	      $data = [
-	        'info'  		=> $this->input->post('info'),
-	        'perusahaan'    => $this->input->post('perusahaan'),
-	        'tanggal_akhir' => $this->input->post('tgl_akhir'),
-	        'tanggal'   	=> date('Y-m-d'),
-	      ];
-	      $this->db->update('info_loker',$data,['id' => $id]);
-	      alertsuccess('message','Data berhasil diubah');
-	      redirect('admin/career');
-	    }
+			$data['career'] = $this->db->get_where('info_loker', ['id' => $id])->row();
+			$this->load->view('header');
+			$this->load->view('page/admin/edit_career', $data);
+			$this->load->view('footer');
+		} else {
+			$data = [
+				'info'  		=> $this->input->post('info'),
+				'perusahaan'    => $this->input->post('perusahaan'),
+				'tanggal_akhir' => $this->input->post('tgl_akhir'),
+				'tanggal'   	=> date('Y-m-d'),
+			];
+			$this->db->update('info_loker', $data, ['id' => $id]);
+			alertsuccess('message', 'Data berhasil diubah');
+			redirect('admin/career');
+		}
 	}
 
 	public function iklan_del($id)
 	{
 		is_admin();
-		$this->db->delete('info_loker',['id' => $id]);
+		$this->db->delete('info_loker', ['id' => $id]);
 
-		alertsuccess('message','Data berhasil dihapus');
+		alertsuccess('message', 'Data berhasil dihapus');
 		redirect('admin/career');
 	}
 

@@ -41,9 +41,4 @@ $config['iklan'] = [
     'label'   => 'Jenis Bahan Bakar',
     'rules'   => 'required|trim',
   ],
-  [
-    'field'   => 'tanggal',
-    'label'   => 'Tanggal',
-    'rules'   => 'required|trim'
-  ],
 ];

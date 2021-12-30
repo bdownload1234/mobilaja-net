@@ -5,7 +5,6 @@
 			<div class="card-header">Tambah Lowongan</div>
 			<form action="<?= base_url('admin/career_add') ?>" method="post" enctype="multipart/form-data"> 
 			<div class="card-body">
-				 
 				  <div class="form-group row">
 				    <label class="col-sm-3 col-form-label">Info</label>
 				    <div class="col-sm-9">
