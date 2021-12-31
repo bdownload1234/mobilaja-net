@@ -5,7 +5,7 @@
                         <img src="<?= base_url() ?>/assets/pagemobilaja/login/images/img-01.png" alt="IMG" />
                     </div>
                     
-                    <form class="login100-form validate-form" action="<?= base_url('admin/registrasi') ?>" method="post">
+                    <form class="login100-form validate-form" action="<?= base_url('Admin/registrasi') ?>" method="post">
                         <span class="login100-form-title"> Member Sign Up </span>
                         <?= $this->session->flashdata('message'); ?>
                         <div class="wrap-input100 validate-input" data-validate="Masukan Nama Lengkap">
@@ -64,7 +64,7 @@
                             </span>
                         </div>
 
-                        <input class="input100" type="hidden" name="status" value="admin" />
+                        <input class="input100" type="hidden" name="status" value="Admin" />
 
 
                         <div class="container-login100-form-btn">

@@ -2,14 +2,14 @@
 		<div class="features-search-section">
 			<div class="container">
 				<div class="row">
-					<div class="col-md-8">
+					<div class="col-md-auto">
 						<div class="row">
 							<div class="col-md-6">
 								<div class="service-item wow fadeIn" data-wow-duration="0.75s">
 									<i class="fa fa-car"></i>
 									<div class="text-content">
-										<h6>Sell &amp; Buy Cars</h6>
-										<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sequi laboriosam quod voluptate, soluta ad quae!</p>
+										<h6>Jual &amp; Beli Mobil</h6>
+										<p>Jual dan Beli mobil bekas idaman anda dengan harga yang kompetitif dan bisa di nego. Transaksi termudah, tercepat, dan terbuka!</p>
 									</div>
 								</div>
 							</div>
@@ -17,8 +17,8 @@
 								<div class="service-item wow fadeIn" data-wow-duration="0.75s">
 									<i class="fa fa-search"></i>
 									<div class="text-content">
-										<h6>Car Dealer Research</h6>
-										<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sequi laboriosam quod voluptate, soluta ad quae!</p>
+										<h6>Temukan Mobil Bekas Idamanmu</h6>
+										<p>Temukan mobil bekas idamanmu dari sabang sampai merauke, dari miangas sampai pulau rote!</p>
 									</div>
 								</div>
 							</div>
@@ -26,8 +26,8 @@
 								<div class="service-item wow fadeIn" data-wow-duration="0.75s">
 									<i class="fa fa-users"></i>
 									<div class="text-content">
-										<h6>Best Dealers</h6>
-										<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sequi laboriosam quod voluptate, soluta ad quae!</p>
+										<h6>Tempat COD Terpercaya</h6>
+										<p>Tertarik dan mau test drive? Hubungi kami untuk menyediakan tempat ketemuan terpercaya dengan dealer dan mekanik yang handal!</p>
 									</div>
 								</div>
 							</div>
@@ -35,78 +35,8 @@
 								<div class="service-item wow fadeIn" data-wow-duration="0.75s">
 									<i class="fa fa-globe"></i>
 									<div class="text-content">
-										<h6>National Known</h6>
-										<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sequi laboriosam quod voluptate, soluta ad quae!</p>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-4">
-						<div class="search-content wow fadeIn" data-wow-duration="0.75s">
-							<div class="search-heading">
-								<div class="icon">
-									<i class="fa fa-search"></i>
-								</div>
-								<div class="text-content">
-									<h2>Quick Search</h2>
-									<span>We made a quick search just for you</span>
-								</div>
-							</div>
-							<div class="search-form">
-								<div class="row">
-									<div class="col-md-12">
-										<div class="input-select">
-											<select name="brand" id="brand">
-												<option value="-1">Select Band</option>
-												<option>Wolkswagen</option>
-												<option>Audi</option>
-												<option>Bmw</option>
-												<option>Opel</option>
-												<option>Citroen</option>
-											</select>
-										</div>
-									</div>
-									<div class="col-md-12">
-										<div class="input-select">
-											<select name="mark" id="mark">
-												<option value="-1">Select Mark</option>
-												<option>Audi A3</option>
-												<option>Audi A4</option>
-												<option>Audi A5</option>
-												<option>Audi A6</option>
-												<option>Audi A7</option>
-											</select>
-										</div>
-									</div>
-									<div class="col-md-6">
-										<div class="input-select">
-											<select name="min-price" id="min-price">
-												<option value="-1">Min Price</option>
-												<option>$500</option>
-												<option>$1.000</option>
-												<option>$1.500</option>
-												<option>$2.000</option>
-												<option>$2.500</option>
-											</select>
-										</div>
-									</div>
-									<div class="col-md-6">
-										<div class="input-select">
-											<select name="max-price" id="max-price">
-												<option value="-1">Max Price</option>
-												<option>$5.000</option>
-												<option>$7.500</option>
-												<option>$10.000</option>
-												<option>$15.500</option>
-												<option>$20.000</option>
-											</select>
-										</div>
-									</div>
-									<div class="col-md-12">
-										<div class="secondary-button">
-											<a href="#">Search <i class="fa fa-search"></i></a>
-										</div>
+										<h6>Dari Sabang Sampai Merauke</h6>
+										<p>Kami hadir di seluruh provinsi indonesia, kamu bisa menemukan mobil idamanmu, hanya melalui kami!</p>
 									</div>
 								</div>
 							</div>
@@ -122,19 +52,6 @@
 		<div class="recent-cars">
 			<div class="container">
 				<div class="recent-car-content">
-					<div class="row">
-						<div class="col-md-12">
-							<div class="section-heading">
-								<div class="icon">
-									<i class="fa fa-car"></i>
-								</div>
-								<div class="text-content">
-									<h2>Top Cars</h2>
-									<span>Check our top cars</span>
-								</div>
-							</div>
-						</div>
-					</div>
 					<div class="row">
 						<?php foreach ($iklan as $i) : ?>
 							<div class="col-md-4 col-sm-6">

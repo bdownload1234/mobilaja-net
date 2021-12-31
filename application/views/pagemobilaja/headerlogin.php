@@ -84,23 +84,15 @@
 
     
 
-    <div id="search">
-        <button type="button" class="close">×</button>
-        <form>
-            <input type="search" value="" placeholder="type keyword(s) here" />
-            <button type="submit" class="primary-button">Search <i class="fa fa-search"></i></button>
-        </form>
-    </div>
-
     <header class="site-header wow fadeIn" data-wow-duration="1s">
         <div id="main-header" class="main-header">
             <div class="container clearfix">
                 <div class="logo">
-                    <a href="<?= base_url('page_mobilaja') ?>"></a>
+                    <a href="<?= base_url('Page_Mobilaja') ?>"></a>
                 </div>
                 <div id='cssmenu'>
                     <ul>
-                        <li><a href='<?= base_url('page_mobilaja') ?>'>Homepage</a></li>
+                        <li><a href='<?= base_url('Page_Mobilaja') ?>'>Homepage</a></li>
                         <!-- <li class='active'><a href='#'>Car Listing</a>
 					      	<ul>
 					         	<li><a href='#'>Sidebar</a>
@@ -120,12 +112,12 @@
 					   	</li> -->
                         <li><a href='about_us.html'>About Us</a></li>
                         <li><a href='http://wa.me/089503037403'>Kontak Kami(WA)</a></li>
-                        <?php if (!$this->session->has_userdata('username')) : ?>
+                        <?php if (!$this->session->has_userdata('email')) : ?>
                             <li class="nav-item">
-                                <a class="nav-link" href="<?= base_url('page_mobilaja/registrasi') ?>">Buat Akun</a>
+                                <a class="nav-link" href="<?= base_url('Page_Mobilaja/registrasi') ?>">Buat Akun</a>
                             </li>
                             <li class="nav-itme">
-                                <a class="nav-link" href="<?= base_url('page_mobilaja/login') ?>">Masuk</a>
+                                <a class="nav-link" href="<?= base_url('Page_Mobilaja/login') ?>">Masuk</a>
                             </li>
                         <?php else : ?>
                             <li class="nav-itme">
@@ -133,15 +125,15 @@
                             </li>
                         <?php endif; ?>
 
-                        <?php if ($this->session->has_userdata('username')) : ?>
-                            <?php if (!$this->session->has_userdata('role')) : ?>
+                        <?php if ($this->session->has_userdata('email')) : ?>
+                            <?php if ($this->session->has_userdata('role')) : ?>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="<?= base_url('admin/profil') ?>"> Lihat Profil </a>
+                                    <a class="nav-link" href="<?= base_url('Admin/profil') ?>"> Lihat Profil </a>
                                 </li>
                             <?php endif; ?>
                             <li class="nav-item">
                                 <?php if ($this->session->has_userdata('role')) : ?>
-                                    <a class="nav-link" href="<?= base_url('admin/career') ?>">Posting Iklan</a>
+                                    <a class="nav-link" href="<?= base_url('Admin/iklan') ?>">Posting Iklan</a>
                                 <?php endif; ?>
                             </li>
                         <?php endif; ?>
@@ -160,7 +152,7 @@
                     </button>
                 </div>
                 <div class="modal-footer">
-                    <a class="btn btn-dark" href="<?= base_url('pelamar/logout') ?>">Logout</a>
+                    <a class="btn btn-dark" href="<?= base_url('Admin/logout') ?>">Logout</a>
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
                 </div>
             </div>

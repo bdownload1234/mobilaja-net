@@ -5,7 +5,7 @@
                         <img src="<?= base_url() ?>/assets/pagemobilaja/login/images/img-01.png" alt="IMG" />
                     </div>
                     <?= $this->session->flashdata('message'); ?>
-                    <form class="login100-form" action="<?= base_url('admin/auth') ?>" method="post">
+                    <form class="login100-form" action="<?= base_url('Admin/auth') ?>" method="post">
                         <span class="login100-form-title"> Member Login </span>
 
                         <div class="wrap-input100">

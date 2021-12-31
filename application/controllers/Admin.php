@@ -39,21 +39,29 @@ class Admin extends CI_Controller
 
 				$data = [
 					'email' 	=> $user->email,
-					'role'		=> 'admin',
+					'role'		=> 'Admin',
 					'nama'		=> $user->nama_lengkap,
 					'no_hp'		=> $user->no_hp
 				];
 				$this->session->set_userdata($data);
 
-				redirect('page_mobilaja');
+				redirect('Page_Mobilaja');
 			} else {
 				alerterror('message', 'Password salah');
-				redirect('page_mobilaja/login');
+				redirect('Page_Mobilaja/login');
 			}
 		} else {
 			alerterror('message', 'Email tidak ditemukan');
-			redirect('page_mobilaja/login');
+			redirect('Page_Mobilaja/login');
 		}
+	}
+
+	public function logout()
+	{
+		$this->session->unset_userdata('email');
+		$this->session->unset_userdata('role');
+		alertsuccess('message','Logout berhasil');
+		redirect('Page_Mobilaja/');
 	}
 
 	public function registrasi()
@@ -116,39 +124,46 @@ class Admin extends CI_Controller
 			];
 			$this->db->insert('info_iklan', $data);
 			alertsuccess('message', 'Data berhasil ditambahkan');
-			redirect('admin/iklan');
+			redirect('Admin/iklan');
 		}
 	}
 
 	public function iklan_edit($id)
 	{
 		is_admin();
-		if ($this->form_validation->run('career') == false) {
+		if ($this->form_validation->run('iklan') == false) {
 
-			$data['career'] = $this->db->get_where('info_loker', ['id' => $id])->row();
-			$this->load->view('header');
-			$this->load->view('page/admin/edit_career', $data);
-			$this->load->view('footer');
+			$data['iklan'] = $this->db->get_where('info_iklan', ['id' => $id])->row();
+			$this->load->view('pagemobilaja/header');
+			$this->load->view('pagemobilaja/edit_iklan', $data);
 		} else {
 			$data = [
-				'info'  		=> $this->input->post('info'),
-				'perusahaan'    => $this->input->post('perusahaan'),
-				'tanggal_akhir' => $this->input->post('tgl_akhir'),
-				'tanggal'   	=> date('Y-m-d'),
+				'info'  					=> $this->input->post('info'),
+				'kondisi_kendaraan'  		=> $this->input->post('kondisi_kendaraan'),
+				'tahun_kendaraan'  			=> $this->input->post('tahun_kendaraan'),
+				'kilometer_kendaraan'  		=> $this->input->post('kilometer_kendaraan'),
+				'jenis_bahanbakar'  		=> $this->input->post('jenis_bahanbakar'),
+				'warna'  					=> $this->input->post('warna'),
+				'harga'  					=> $this->input->post('harga'),
+				'deskripsi'   				=> $this->input->post('deskripsi'),
+				'nama'   					=> $this->input->post('nama'),
+				'email'   					=> $this->input->post('email'),
+				'nomor_person'   			=> $this->input->post('nomor_person'),
+				'tanggal'					=> date('Y-m-d'),
 			];
-			$this->db->update('info_loker', $data, ['id' => $id]);
+			$this->db->update('info_iklan', $data, ['id' => $id]);
 			alertsuccess('message', 'Data berhasil diubah');
-			redirect('admin/career');
+			redirect('Admin/iklan');
 		}
 	}
 
 	public function iklan_del($id)
 	{
 		is_admin();
-		$this->db->delete('info_loker', ['id' => $id]);
+		$this->db->delete('info_iklan', ['id' => $id]);
 
 		alertsuccess('message', 'Data berhasil dihapus');
-		redirect('admin/career');
+		redirect('Admin/iklan');
 	}
 
 	public function profil()
@@ -158,26 +173,6 @@ class Admin extends CI_Controller
 		$this->load->view('pagemobilaja/profile', $data);
 	}
 
-
-	public function uploadcv()
-	{
-		if (!empty($_FILES['cv']['name'])) {
-			$cv = $this->_uploadImage('cv');
-		} else {
-			$cv = 'default.png';
-		}
-
-		$data = [
-			'id_loker'		=> $this->input->post('id_loker', true),
-			'username'		=> $this->session->userdata('username'),
-			'name'			=> $this->input->post('name', true),
-			'cv'			=> $cv,
-		];
-
-		$this->db->insert('curiculum_vitae', $data);
-		alertsuccess('message', 'Data terkirim, mudah bukan?');
-		redirect('page');
-	}
 
 	
 	public function _uploadImage($name)

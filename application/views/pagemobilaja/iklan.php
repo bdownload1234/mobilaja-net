@@ -6,7 +6,7 @@
 				<div class="card">
 					<div class="card-header">Postingan Iklan</div>
 					<div class="card-body">
-						<a href="<?= base_url('admin/iklan_add') ?>" class="btn btn-link mb-3">Pasang Iklan</a>
+						<a href="<?= base_url('Admin/iklan_add') ?>" class="btn btn-link mb-3">Pasang Iklan</a>
 						<table class="table">
 							<thead>
 								<tr>
@@ -33,9 +33,9 @@
 										<td><?= $i->warna ?></td>
 										<td><?= $i->harga ?></td>
 										<td>
-											<a href="<?= base_url('admin/career_edit/' . $i->id) ?>">Edit</a>
+											<a href="<?= base_url('Admin/iklan_edit/' . $i->id) ?>">Edit</a>
 										</td>
-										<td><a href="<?= base_url('admin/career_del/' . $i->id) ?>" onclick="return confirm('Data ini akan dihapus? ')">Hapus</a></td>
+										<td><a href="<?= base_url('Admin/iklan_del/' . $i->id) ?>" onclick="return confirm('Data ini akan dihapus? ')">Hapus</a></td>
 									</tr>
 								<?php $no++;
 								endforeach; ?>

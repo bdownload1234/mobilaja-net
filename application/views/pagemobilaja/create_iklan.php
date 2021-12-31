@@ -3,7 +3,7 @@
 		<br>
 		<div class="card">
 			<div class="card-header">Posting Iklan</div>
-			<form action="<?= base_url('admin/iklan_add') ?>" method="post" enctype="multipart/form-data">
+			<form action="<?= base_url('Admin/iklan_add') ?>" method="post" enctype="multipart/form-data">
 				<div class="card-body">
 					<div class="form-group row">
 						<label class="col-sm-3 col-form-label">Merk/Tipe Mobil</label>
@@ -85,7 +85,7 @@
 				</div>
 				<div class="card-footer">
 					<button class="btn btn-link" type="submit">Simpan</button>
-					<a href="<?= base_url('admin/iklan') ?>" class="btn btn-link">Kembali</a>
+					<a href="<?= base_url('Admin/iklan') ?>" class="btn btn-link">Kembali</a>
 				</div>
 			</form>
 		</div>
