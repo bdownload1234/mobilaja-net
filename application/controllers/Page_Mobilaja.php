@@ -17,7 +17,6 @@ class Page_Mobilaja extends CI_Controller {
 	{
 		$this->load->view('pagemobilaja/headerlogin');
 		$this->load->view('pagemobilaja/register');
-		//$this->load->view('footer');
 	}
 
 	public function registrasiadmin()
@@ -38,20 +37,19 @@ class Page_Mobilaja extends CI_Controller {
 	{
 		$this->load->view('pagemobilaja/headerlogin');
 		$this->load->view('pagemobilaja/faq');
-		//$this->load->view('pagemobilaja/footer');
+
 	}
 
 	public function ourteam()
 	{
 		$this->load->view('pagemobilaja/headerlogin');
 		$this->load->view('pagemobilaja/ourteam');
-		//$this->load->view('pagemobilaja/footer');
+
 	}
 
 	public function login()
 	{
 		$this->load->view('pagemobilaja/headerlogin');
 		$this->load->view('pagemobilaja/login');
-		//$this->load->view('footer');
 	}
 }

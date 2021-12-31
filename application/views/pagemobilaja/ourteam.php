@@ -18,7 +18,7 @@
     object-fit: cover;">
 							<div class="card-body">
 								<h5 class="card-title">Ridho Hafidz</h5>
-								<p class="card-text">CEO.</p>
+								<p class="card-text">DevOps Engineer.</p>
 								<!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
 							</div>
 						</div>
@@ -75,6 +75,18 @@
 					<div class="col-md-6 col-lg-4 mb-4">
 						<div class="card">
 							<img class="card-img-top" src="https://media-exp1.licdn.com/dms/image/C5603AQGDelO3CUZivg/profile-displayphoto-shrink_800_800/0/1609815329246?e=1646265600&v=beta&t=8HSjSTHbLWZ2_dhMBYRBgj35HjLH9SSyAO5K_EdqoCA" alt="Card image cap" style="width: 100%;
+    height: 15vw;
+    object-fit: cover;">
+							<div class="card-body">
+								<h5 class="card-title">Rio Agi</h5>
+								<p class="card-text">IT Support and Network Engineer.</p>
+								<!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+							</div>
+						</div>
+					</div>
+					<div class="col-md-6 col-lg-4 mb-4">
+						<div class="card">
+							<img class="card-img-top" src="<?= base_url() ?>/assets/foto/shidqi.jpeg" alt="Card image cap" style="width: 100%;
     height: 15vw;
     object-fit: cover;">
 							<div class="card-body">
