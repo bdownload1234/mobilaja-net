@@ -132,9 +132,9 @@ class Admin extends CI_Controller
 	{
 		is_admin();
 		if ($this->form_validation->run('iklan') == false) {
-
+			
 			$data['iklan'] = $this->db->get_where('info_iklan', ['id' => $id])->row();
-			$this->load->view('pagemobilaja/header');
+			$this->load->view('pagemobilaja/headerlogin');
 			$this->load->view('pagemobilaja/edit_iklan', $data);
 		} else {
 			$data = [
@@ -198,4 +198,22 @@ class Admin extends CI_Controller
 
 		return $filename;
 	}
+
+	public function update_profile()
+  	{
+  		
+		$data = [
+			'nama_lengkap'		=> $this->input->post('nama',true),
+			'tgl_lahir'			=> $this->input->post('tgl_lahir',true),
+			'domisili'			=> $this->input->post('domisili',true),
+			'provinsi'			=> $this->input->post('alamat',true),
+			'no_hp'				=> $this->input->post('no_hp',true),
+			'tanggal'			=> date('Y-m-d'),
+		];
+
+		$this->db->update('registrasi',$data,['email' => $this->session->userdata('email')]);
+
+		alertsuccess('message','Berhasil mengupdate profile');
+		redirect('Admin/profil');
+  	}
 }

@@ -1,11 +1,11 @@
-<?= $this->session->flashdata('message'); ?>
 <div class="container-login100">
 	<div>
 		<div class="row mt-4">
 			<div class="col-md">
+			<?= $this->session->flashdata('message'); ?>
 				<div class="card">
 					<div class="card-header">Perbarui Datamu</div>
-					<form action="<?= base_url('pelamar/update_profile') ?>" method="post" enctype="multipart/form-data">
+					<form action="<?= base_url('Admin/update_profile') ?>" method="post" enctype="multipart/form-data">
 						<div class="card-body">
 							<div class="form-group row">
 								<label class="col-sm-3 col-form-label">Nama lengkap</label>

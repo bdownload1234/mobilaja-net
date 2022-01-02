@@ -65,9 +65,7 @@
 										</div>
 									</div>
 									<div class="down-content">
-										<a href="single_car.html">
-											<h4><?= $i->info ?></h4>
-										</a>
+										<button data-toggle="modal" data-target="#exampleModalCenter<?= $i->id ?>"><h4><?= $i->info ?></h4></button><br>
 										<span>Rp. <?= number_format("$i->harga", 2, ",", "."); ?></span>
 										<ul class="car-info">
 											<li>

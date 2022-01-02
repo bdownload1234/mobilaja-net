@@ -40,6 +40,13 @@ class Page_Mobilaja extends CI_Controller {
 
 	}
 
+	public function pricelist()
+	{
+		$this->load->view('pagemobilaja/headerlogin');
+		$this->load->view('pagemobilaja/pricelist');
+
+	}
+
 	public function ourteam()
 	{
 		$this->load->view('pagemobilaja/headerlogin');

@@ -93,6 +93,9 @@
                 <div id='cssmenu'>
                     <ul>
                         <li><a href='<?= base_url('Page_Mobilaja') ?>'>Homepage</a></li>
+                        <li><a href='<?= base_url('Page_Mobilaja/ourteam') ?>'>About Us</a></li>
+                        <li><a href='<?= base_url('Page_Mobilaja/faq') ?>'>FAQ</a></li>
+                        <li><a href='<?= base_url('Page_Mobilaja/pricelist') ?>'>Pricing</a></li>
                         <!-- <li class='active'><a href='#'>Car Listing</a>
 					      	<ul>
 					         	<li><a href='#'>Sidebar</a>
@@ -110,7 +113,6 @@
 					         	<li><a href="single_car.html">Single Car</a></li>
 					      	</ul>
 					   	</li> -->
-                        <li><a href='about_us.html'>About Us</a></li>
                         <li><a href='http://wa.me/089503037403'>Kontak Kami(WA)</a></li>
                         <?php if (!$this->session->has_userdata('email')) : ?>
                             <li class="nav-item">

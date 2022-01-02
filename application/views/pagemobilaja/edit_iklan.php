@@ -70,6 +70,10 @@
 							<?= form_error('deskripsi', '<small class="form-text text-danger">', '</small>') ?>
 						</div>
 					</div>
+
+					<input class="input100" type="hidden" name="nama" value=<?= $this->session->userdata('nama') ?>>
+					<input class="input100" type="hidden" name="email" value=<?= $this->session->userdata('email') ?>>
+					<input class="input100" type="hidden" name="nomor_person" value=<?=$this->session->userdata('no_hp') ?>>
 					
 				</div>
 				<div class="card-footer">
